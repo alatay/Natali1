@@ -76,10 +76,29 @@ class ArabskieChisla {
                 "91", "92", "93", "94", "95", "96", "97", "98", "99", "100",};
 
         if ((sa.equals("I"))||(sa.equals("II"))||(sa.equals("III"))||(sa.equals("IV"))||(sa.equals("V"))||(sa.equals("VI"))||(sa.equals("VII"))||(sa.equals("VIII"))||(sa.equals("IX"))||(sa.equals("X"))) {
-            if ((sb.equals("I")) || (sb.equals("II")) || (sb.equals("III")) || (sb.equals("IV")) || (sb.equals("V")) || (sb.equals("VI")) || (sb.equals("VII")) || (sb.equals("VIII")) || (sb.equals("IX")) || (sb.equals("X"))) {
 
+               switch (sb){
+                   case "I":
+                   case "II":
+                   case "III":
+                   case "IV":
+                   case "V":
+                   case "VI":
+                   case "VII":
+                   case "VIII":
+                   case "IX":
+                   case "X":
+                       break;
+                   default:
+                       try {
+                           throw new RumenException("Вы ввели римское число не верного формата.");
+                       } catch (RumenException e) {
+                           e.printStackTrace();
+                                                }
+                        break;
+               }
                 int j = 0;
-                int i = 0;
+                int i ;
 
                 for (i = 0; i < rim.length; ++i) {
                     if (rim[i].equals(sa))
@@ -160,13 +179,24 @@ class ArabskieChisla {
                         } else {
                             System.out.println("ВНИМАНИЕ!!! Вы не ввели знак действия!");
                         }
+                      }
+                    try {
+                        throw new RumenException("Вы ввели число меньше 1!");
+                    } catch (RumenException e) {
+                        e.printStackTrace();
                     }
-                }
 
+                }
+            try {
+                throw new RumenException("Вы ввели число больше 10!");
+            } catch (RumenException e) {
+                e.printStackTrace();
             }
+
         }
-            }
-        }
+
+    }
+}
 
 
 
