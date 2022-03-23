@@ -95,7 +95,7 @@ class ArabskieChisla {
                        } catch (RumenException e) {
                            e.printStackTrace();
                                                 }
-                        break;
+                        System.exit(0);
                }
                 int j = 0;
                 int i ;
@@ -179,22 +179,20 @@ class ArabskieChisla {
                         } else {
                             System.out.println("ВНИМАНИЕ!!! Вы не ввели знак действия!");
                         }
-                      }
+                       }
                     try {
                         throw new RumenException("Вы ввели число меньше 1!");
                     } catch (RumenException e) {
                         e.printStackTrace();
+                        System.exit(0);
                     }
-
                 }
             try {
                 throw new RumenException("Вы ввели число больше 10!");
             } catch (RumenException e) {
                 e.printStackTrace();
             }
-
         }
-
     }
 }
 
