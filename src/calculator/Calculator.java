@@ -54,6 +54,11 @@ class ArabskieChisla {
         String sa = split[0];
         String ss = split[1];
         String sb = split[2];
+        String isc = split[3];
+        if (isc==" ");
+        else {
+            throw new RuntimeException("Вы ввели лишний знак!");
+        }
         String[] rim = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
                 "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
                 "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX",
