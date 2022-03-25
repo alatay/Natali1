@@ -50,15 +50,25 @@ class ArabskieChisla {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите 2 числа и операцию, которую вы хотите с ними совершить: ");
         String name = in.nextLine();
+
         String[] split = name.split(" ");
+        for (int n = 0; n<split.length; ++n){
+            if (n<3);
+            else {
+                try {
+                    throw new RumenException("Вы ввели лишний символ!");
+                } catch (RumenException e) {
+                    e.printStackTrace();
+                    System.exit(0);
+                }
+            }
+        }
         String sa = split[0];
         String ss = split[1];
         String sb = split[2];
-        String isc = split[3];
-        if (isc==" ");
-        else {
-            throw new RuntimeException("Вы ввели лишний знак!");
-        }
+
+
+
         String[] rim = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
                 "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
                 "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX",
@@ -162,42 +172,45 @@ class ArabskieChisla {
                     System.out.println("ВНИМАНИЕ!!! Вы не ввели знак действия!");
                 }
             } else {
-                Calculator c1 = new Calculator();
-                int a = Integer.parseInt(sa);
-                int b = Integer.parseInt(sb);
+            Calculator c1 = new Calculator();
+            int a = Integer.parseInt(sa);
+            int b = Integer.parseInt(sb);
 
-                if ((a <= 10) && (b <= 10)) {
-                    if ((a >= 1) && (b >= 1)) {
+            if ((a <= 10) && (b <= 10)) {
+                if ((a >= 1) && (b >= 1)) {
 
-                        if (ss.equals("+")) {
-                            int c = c1.summa(a, b);
-                            System.out.println(c);
-                        } else if (ss.equals("-")) {
-                            int c = c1.raznost(a, b);
-                            System.out.println(c);
-                        } else if (ss.equals("*")) {
-                            int c = c1.umnojit(a, b);
-                            System.out.println(c);
-                        } else if (ss.equals("/")) {
-                            int c = c1.delenie(a, b);
-                            System.out.println(c);
-                        } else {
-                            System.out.println("ВНИМАНИЕ!!! Вы не ввели знак действия!");
-                        }
-                       }
-                    try {
-                        throw new RumenException("Вы ввели число меньше 1!");
-                    } catch (RumenException e) {
-                        e.printStackTrace();
-                        System.exit(0);
+                    if (ss.equals("+")) {
+                        int c = c1.summa(a, b);
+                        System.out.println(c);
+                    } else if (ss.equals("-")) {
+                        int c = c1.raznost(a, b);
+                        System.out.println(c);
+                    } else if (ss.equals("*")) {
+                        int c = c1.umnojit(a, b);
+                        System.out.println(c);
+                    } else if (ss.equals("/")) {
+                        int c = c1.delenie(a, b);
+                        System.out.println(c);
+                    } else {
+                        System.out.println("ВНИМАНИЕ!!! Вы не ввели знак действия!");
                     }
-                }
+
+                } else {
+                try {
+                    throw new RumenException("Вы ввели число меньше 1!");
+                } catch (RumenException e) {
+                    e.printStackTrace();
+                }}
+
+            }else {
             try {
                 throw new RumenException("Вы ввели число больше 10!");
             } catch (RumenException e) {
                 e.printStackTrace();
-            }
+            }}
+
         }
+
     }
 }
 
